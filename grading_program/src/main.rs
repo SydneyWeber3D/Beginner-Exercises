@@ -25,5 +25,25 @@ fn main()
 		{
 			println!("Great job, that's a solid A!");
 		}
+		else if user_input < 90 && user_input >= 80
+		{
+			println!("Not bad, B.");
+		}
+		else if user_input < 80 && user_input >= 70
+		{
+			println!("Could be worse, C.");
+		}
+		else if user_input < 70 && user_input >= 60
+		{
+			println!("Getting rough, D...");
+		}
+		else if user_input < 60
+		{
+			println!("Oof... That's an F.")
+		}
+		else
+		{
+			println!("You must enter a number between 0 and 100.");
+		}
 	}
 }
