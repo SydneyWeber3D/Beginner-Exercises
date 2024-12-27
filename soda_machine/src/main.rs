@@ -6,11 +6,11 @@ fn main()
 
 	loop
 	{
-		println!("\t1) Pempis");
-		println!("\t2) Conke");
-		println!("\t3) Sproot");
-		println!("\t4) Ep Pepepe");
-		println!("\t5) Funti");
+		println!("  1) Pempis");
+		println!("  2) Conke");
+		println!("  3) Sproot");
+		println!("  4) Ep Pepepe");
+		println!("  5) Funti");
 
 		print!("\nPick your poison, or Q to quit: ");
 		let _ = stdout().flush();
@@ -25,7 +25,7 @@ fn main()
 
 		let user_input: u8 = raw_user_input.trim().parse().expect("You must enter a number between 0 and 5.");
 
-		if user_input == 1
+		/*if user_input == 1
 		{
 			println!("Dispensing can of Pempis...");
 		}
@@ -48,15 +48,21 @@ fn main()
 		else
 		{
 			println!("That's not an option...");
+		}*/
+
+		match user_input
+		{
+			1 => println!("Dispensing can of Pempis...\n"),
+			2 => println!("Dispensing can of Conke...\n"),
+			3 => println!("Dispensing can of Sproot...\n"),
+			4 => println!("Dispensing can of Ep Pepepe...\n"),
+			5 => println!("Dispensing can of Funti...\n"),
+			_ => println!("That's not an option...\n"),
 		}
 	}
 }
 
 /*
-	Write a program that presents the user with a choice of 5 beverages
-	Then allow the user to choose a beverage by entering a number 1-5
-	Output which beverage they chose
-
 	If done with if-statements, change to switch, vice-versa
 
 	Modify the program so if the user enters something other than 1-5 it outputs an error
