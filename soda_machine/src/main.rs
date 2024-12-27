@@ -57,13 +57,7 @@ fn main()
 			3 => println!("Dispensing can of Sproot...\n"),
 			4 => println!("Dispensing can of Ep Pepepe...\n"),
 			5 => println!("Dispensing can of Funti...\n"),
-			_ => println!("That's not an option...\n"),
+			_ => println!("ERROR: Invalid selection.\n"),
 		}
 	}
 }
-
-/*
-	If done with if-statements, change to switch, vice-versa
-
-	Modify the program so if the user enters something other than 1-5 it outputs an error
-*/
