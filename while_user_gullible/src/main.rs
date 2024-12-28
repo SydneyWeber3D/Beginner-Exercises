@@ -19,17 +19,23 @@ fn main()
 	println!("Let's make a deal.");
 	println!("I'll give you $100 to keep inputting anything BUT a set number.");
 
+	// Set initial counter to keep track of and limit loops
 	let mut loop_count: u32 = 0;
 
 	loop
 	{
+		// Ask user to input anything but the current loop iteration
 		println!("\nEnter anything BUT {loop_count}.");
 
+		// Take in raw user input
 		let mut raw_user_input: String = String::new();
 		stdin().read_line(&mut raw_user_input).expect("Incorrect input.");
 
+		// Convert user input to integer form for easier comparison
+		// Expected input can be anything, so u32 should be a safe bet
 		let user_input: u32 = raw_user_input.trim().parse().expect("Incorrect input.");
 
+		// Check if user input matches loop iteration, end if it does
 		if user_input == loop_count
 		{
 			println!("HEY! You weren't supposed to input {loop_count}!");
@@ -38,6 +44,7 @@ fn main()
 
 		loop_count += 1;
 
+		// End after 10 loop iterations
 		if loop_count == 10
 		{
 			println!("\n...Alright, that's enough of that...");
