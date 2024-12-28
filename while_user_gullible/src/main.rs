@@ -19,16 +19,26 @@ fn main()
 	println!("Let's make a deal.");
 	println!("I'll give you $100 to keep inputting anything BUT 5.");
 
+	let mut loop_count: u32 = 0;
+
 	loop
 	{
 		let mut raw_user_input: String = String::new();
 		stdin().read_line(&mut raw_user_input).expect("Incorrect input.");
 
-		let user_input: u8 = raw_user_input.trim().parse().expect("Incorrect input.");
+		let user_input: u32 = raw_user_input.trim().parse().expect("Incorrect input.");
 
 		if user_input == 5
 		{
 			println!("HEY! You weren't supposed to input 5!");
+			break;
+		}
+
+		loop_count += 1;
+
+		if loop_count == 10
+		{
+			println!("\n...Alright, that's enough of that...");
 			break;
 		}
 	}
