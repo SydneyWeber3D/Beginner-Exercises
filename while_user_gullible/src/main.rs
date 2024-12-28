@@ -17,20 +17,22 @@ use std::io::stdin;
 fn main()
 {
 	println!("Let's make a deal.");
-	println!("I'll give you $100 to keep inputting anything BUT 5.");
+	println!("I'll give you $100 to keep inputting anything BUT a set number.");
 
 	let mut loop_count: u32 = 0;
 
 	loop
 	{
+		println!("\nEnter anything BUT {loop_count}.");
+
 		let mut raw_user_input: String = String::new();
 		stdin().read_line(&mut raw_user_input).expect("Incorrect input.");
 
 		let user_input: u32 = raw_user_input.trim().parse().expect("Incorrect input.");
 
-		if user_input == 5
+		if user_input == loop_count
 		{
-			println!("HEY! You weren't supposed to input 5!");
+			println!("HEY! You weren't supposed to input {loop_count}!");
 			break;
 		}
 
